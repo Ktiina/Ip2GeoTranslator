@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="index.css">
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="myAJAXlib.js">
+</script>
+<SCRIPT language="JavaScript" SRC="myJS.js">
+</SCRIPT>
+
+
+</head>
+<body> 
+
+<h1><b>SOAP WS - IPv4 address to geographical information translator</b></h1>
+<p><i>Note: translator accepts also IPv6 addresses, but they are converted to IPv4 (least significant 32 bits)</i></p>
+
+<div id="div1">
+   <code>Your public IPv4 address is: </code>
+   <input type="text" id="t2" value="" style="width:15%" disabled> 
+   <input type="button" id="b1" value="Translate my public IPv4 address"  onclick="getIpGeo('current');" style="width:15%">
+</div>
+<div id="div2">
+   <code> Here enter IPv4 address: </code>
+   <input type="text" id="t3" value="" style="width:15%">
+   <input type="button" id="b2" value="Translate entered IPv4 address"  onclick="getIpGeo('custom');" style="width:15%">
+</div>
+
+
+<div id="div3">
+</div>
+
+<script type="application/javascript">
+  function getIP(json) {
+    window.document.getElementById('t2').value=""+json.ip;
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script> 
+
+<table style="width:50%">
+  <tr>
+    <th></th>
+    <th>Your public IPv4 address</th>
+    <th>Entered IPv4 address</th>
+  </tr>
+  <tr>
+    <th>Country</th>
+    <td align=center id="td11"></td>
+    <td align=center id="td12"></td>
+  </tr> 
+  <tr>
+  	<th>Country Code</th>
+    <td align=center id="td21"></td>
+    <td align=center id="td22"></td>
+  </tr>
+  <tr>
+  	<th>City</th>
+    <td align=center id="td31"></td>
+    <td align=center id="td32"></td>
+  </tr>
+  <tr>
+  	<th>State Province</th>
+    <td align=center id="td41"></td>
+    <td align=center id="td42"></td>
+  </tr>
+  <tr>
+  	<th>Area Code</th>
+    <td align=center id="td51"></td>
+    <td align=center id="td52"></td>
+  </tr>
+  <tr>
+  	<th>Region Name</th>
+    <td align=center id="td61"></td>
+    <td align=center id="td62"></td>
+  </tr>
+  <tr>
+  	<th>Organization</th>
+    <td align=center id="td71"></td>
+    <td align=center id="td72"></td>
+  </tr>
+  <tr>
+  	<th>Latitude</th>
+    <td align=center id="td81"></td>
+    <td align=center id="td82"></td>
+  </tr>
+  <tr>
+  	<th>Longitude</th>
+    <td align=center id="td91"></td>
+    <td align=center id="td92"></td>
+  </tr>
+  <tr>
+  	<th>Time Zone</th>
+    <td align=center id="td101"></td>
+    <td align=center id="td102"></td>
+  </tr>
+  <tr>
+  	<th>Certainty</th>
+    <td align=center id="td111"></td>
+    <td align=center id="td112"></td>
+  </tr>
+</table>
+
+</body>
+</html>
